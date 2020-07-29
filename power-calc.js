@@ -1,8 +1,11 @@
 powerCalc = (base, power) => {
-  let solution
-  while ( power > 1 ) {
-    solution *= base;
-    power--
+  if ( power === 1 ){
+    return 1
   }
-  return solution
+  else if ( power < 1 ) {
+    return "please input a number greter than 0"
+  }
+  else { 
+    return base * powerCalc(base, power-1)
+  }
 }
